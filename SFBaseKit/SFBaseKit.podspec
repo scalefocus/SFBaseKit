@@ -7,7 +7,7 @@ Pod::Spec.new do |spec|
   This framework includes Utils, Extensions, BaseClasses and Coordinator approach. Could be used among all projects.
                    DESC
   spec.homepage     = "https://github.com/scalefocus/SFBaseKit"
-  spec.license      = { :type => 'MIT', :file => 'SFBaseKit/LICENSE' }
+  spec.license      = { :type => 'MIT', :file => 'LICENSE' }
   spec.author             = { "Scalefocus" => "code@upnetix.com" }
   spec.platform     = :ios, "10.0"
   spec.swift_version = '5.0'
