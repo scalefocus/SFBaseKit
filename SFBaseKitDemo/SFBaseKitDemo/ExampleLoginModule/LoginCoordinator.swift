@@ -9,37 +9,36 @@
 import Foundation
 import SFBaseKit
 
-protocol LoginSceneDelegate: class {
-    func sceneShouldContinueToForgottenPassword()
-    func sceneShouldContinueToLoginIn()
+protocol LoginSceneDelegate: Coordinator {
+    func loginSceneShouldContinueToForgottenPassword()
+    func loginSceneShouldContinueToLoginIn()
 }
 
 class LoginCoordinator: Coordinator {
     
     // MARK: - Properties
-    private var navigationController: UINavigationController?
+    unowned let navigationController: UINavigationController
     
     // MARK: - Coordinator
     init(navigationController: UINavigationController) {
-        super.init()
         self.navigationController = navigationController
     }
     
     override func start() {
         guard let loginViewController = LoginViewController.instantiateFromStoryboard() else { return }
         loginViewController.sceneDelegate = self
-        navigationController?.pushViewController(loginViewController, animated: false)
+        navigationController.pushViewController(loginViewController, animated: false)
     }
 }
 
 // MARK: - LoginSceneDelegate
 extension LoginCoordinator: LoginSceneDelegate {
-    func sceneShouldContinueToForgottenPassword() {
+    func loginSceneShouldContinueToForgottenPassword() {
         guard let forgottenPasswordViewController = ForgottenPasswordViewController.instantiateFromStoryboard() else { return }
-        navigationController?.pushViewController(forgottenPasswordViewController, animated: false)
+        navigationController.pushViewController(forgottenPasswordViewController, animated: false)
     }
     
-    func sceneShouldContinueToLoginIn() {
+    func loginSceneShouldContinueToLoginIn() {
         /* Initialize new coordinator to navigate to next scene.
          Add the new coordinator to child coordinators.
          start it.

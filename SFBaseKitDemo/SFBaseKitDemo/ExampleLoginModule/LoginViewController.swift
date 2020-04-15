@@ -21,11 +21,11 @@ class LoginViewController: UIViewController {
     
     // MARK: - Actions
     @IBAction func forgottenPasswordButtonOnPress(_ sender: Any) {
-        sceneDelegate?.sceneShouldContinueToForgottenPassword()
+        sceneDelegate?.loginSceneShouldContinueToForgottenPassword()
     }
     
     @IBAction func loginButtonOnPress(_ sender: Any) {
-        sceneDelegate?.sceneShouldContinueToLoginIn()
+        sceneDelegate?.loginSceneShouldContinueToLoginIn()
     }
 }
 
