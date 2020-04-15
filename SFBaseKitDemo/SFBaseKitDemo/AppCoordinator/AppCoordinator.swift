@@ -12,7 +12,7 @@ import SFBaseKit
 class AppCoordinator: Coordinator {
     
     // MARK: - Properties
-    var window: UIWindow?
+    let window: UIWindow?
     
     // MARK: - Coordinator
     init(window: UIWindow?) {
