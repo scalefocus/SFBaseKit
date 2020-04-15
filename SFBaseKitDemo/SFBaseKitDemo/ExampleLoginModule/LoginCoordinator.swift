@@ -11,10 +11,16 @@ import SFBaseKit
 
 class LoginCoordinator: Coordinator {
     
-    var navigationController: UINavigationController?
+    // MARK: - Properties
+    private var navigationController: UINavigationController?
+    
+    // MARK: - Initializer
+    init(navigationController: UINavigationController) {
+        self.navigationController = navigationController
+    }
     
     override func start() {
         let loginViewController = LoginViewController.instantiateFromStoryboard() ?? UIViewController()
-        navigationController = UINavigationController(rootViewController: loginViewController)
+        navigationController?.pushViewController(loginViewController, animated: false)
     }
 }
