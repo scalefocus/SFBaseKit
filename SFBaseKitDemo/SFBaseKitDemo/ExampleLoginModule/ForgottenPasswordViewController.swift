@@ -7,13 +7,18 @@
 //
 
 import UIKit
+import SFBaseKit
 
 class ForgottenPasswordViewController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
+}
 
+// MARK: - StoryboardInstantiatable
+extension ForgottenPasswordViewController: StoryboardInstantiatable {
+    static var storyboardName: String {
+        return "LoginScreen"
+    }
 }

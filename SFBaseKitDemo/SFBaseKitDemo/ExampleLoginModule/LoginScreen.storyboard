@@ -1,7 +1,127 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13142" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12042"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <scenes/>
+    <scenes>
+        <!--Login View Controller-->
+        <scene sceneID="JOw-wJ-0Lc">
+            <objects>
+                <viewController storyboardIdentifier="LoginViewController" id="GSu-kX-zwo" customClass="LoginViewController" customModule="SFBaseKitDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="R0f-UI-Gqp">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="username" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bzt-78-jBR" userLabel="usernameTextField">
+                                <rect key="frame" x="72.5" y="272.5" width="269" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="APi-gd-TJF"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Verdana-Bold" family="Verdana" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" textContentType="username"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mGF-NZ-UXH" userLabel="passwordTextField">
+                                <rect key="frame" x="72.5" y="324.5" width="269" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="YCm-bm-TSC"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Verdana-Bold" family="Verdana" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" textContentType="username"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RWu-T1-jhb">
+                                <rect key="frame" x="146.5" y="372.5" width="121" height="27"/>
+                                <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="12"/>
+                                <state key="normal" title="Forgoten password?">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="forgottenPasswordButtonOnPress:" destination="GSu-kX-zwo" eventType="touchUpInside" id="NAx-AW-MYE"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UNG-qo-QrZ" userLabel="loginButton">
+                                <rect key="frame" x="167" y="419.5" width="80" height="39"/>
+                                <fontDescription key="fontDescription" name="Verdana-Bold" family="Verdana" pointSize="22"/>
+                                <state key="normal" title="Log In">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="loginButtonOnPress:" destination="GSu-kX-zwo" eventType="touchUpInside" id="PxE-Hs-dCl"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="RWu-T1-jhb" firstAttribute="centerX" secondItem="Gjk-aT-Oej" secondAttribute="centerX" id="7dM-CV-66l"/>
+                            <constraint firstItem="UNG-qo-QrZ" firstAttribute="centerX" secondItem="Gjk-aT-Oej" secondAttribute="centerX" id="J1K-f9-SIk"/>
+                            <constraint firstItem="mGF-NZ-UXH" firstAttribute="centerX" secondItem="Gjk-aT-Oej" secondAttribute="centerX" id="PHn-fv-tsP"/>
+                            <constraint firstItem="mGF-NZ-UXH" firstAttribute="top" secondItem="bzt-78-jBR" secondAttribute="bottom" constant="8" id="YPp-Hl-ojy"/>
+                            <constraint firstItem="UNG-qo-QrZ" firstAttribute="top" secondItem="RWu-T1-jhb" secondAttribute="bottom" constant="20" id="cAe-vM-C3u"/>
+                            <constraint firstItem="mGF-NZ-UXH" firstAttribute="width" secondItem="bzt-78-jBR" secondAttribute="width" id="d5c-E3-WTU"/>
+                            <constraint firstItem="RWu-T1-jhb" firstAttribute="top" secondItem="mGF-NZ-UXH" secondAttribute="bottom" constant="4" id="fwy-L1-0Al"/>
+                            <constraint firstItem="bzt-78-jBR" firstAttribute="centerY" secondItem="Gjk-aT-Oej" secondAttribute="centerY" multiplier="0.65" id="qi8-iP-cLZ"/>
+                            <constraint firstItem="bzt-78-jBR" firstAttribute="width" secondItem="R0f-UI-Gqp" secondAttribute="width" multiplier="0.65" id="sUp-oj-d7g"/>
+                            <constraint firstItem="bzt-78-jBR" firstAttribute="centerX" secondItem="Gjk-aT-Oej" secondAttribute="centerX" id="zT6-28-ALY"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Gjk-aT-Oej"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="n6l-KI-8T4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7" y="68"/>
+        </scene>
+        <!--Forgotten Password View Controller-->
+        <scene sceneID="oW7-RU-inF">
+            <objects>
+                <viewController storyboardIdentifier="ForgottenPasswordViewController" id="3He-6j-nNI" customClass="ForgottenPasswordViewController" customModule="SFBaseKitDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="h6V-73-MXi">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Forgotten Password Screen" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zR8-H8-QAE">
+                                <rect key="frame" x="56.5" y="439.5" width="301.5" height="27"/>
+                                <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="zR8-H8-QAE" firstAttribute="centerX" secondItem="a7K-q9-72l" secondAttribute="centerX" id="Dag-up-D4L"/>
+                            <constraint firstItem="zR8-H8-QAE" firstAttribute="centerY" secondItem="a7K-q9-72l" secondAttribute="centerY" id="x4z-js-57S"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="a7K-q9-72l"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xat-yZ-XsI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="672" y="68"/>
+        </scene>
+    </scenes>
 </document>

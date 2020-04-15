@@ -9,14 +9,25 @@
 import UIKit
 import SFBaseKit
 
-class LoginViewController: UIViewController, StoryboardInstantiatable {
-    
-    static var storyboardName = "Login Screen"
+class LoginViewController: UIViewController, CoordinatableViewController {
+   unowned var coordinatorDelegate: CoordinatorSceneDelegate!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    }
+    
+    @IBAction func forgottenPasswordButtonOnPress(_ sender: Any) {
+        
+    }
+    
+    @IBAction func loginButtonOnPress(_ sender: Any) {
+    
     }
 }
 
+// MARK: - StoryboardInstantiatable
+extension LoginViewController: StoryboardInstantiatable {
+    static var storyboardName: String {
+        return "LoginScreen"
+    }
+}
