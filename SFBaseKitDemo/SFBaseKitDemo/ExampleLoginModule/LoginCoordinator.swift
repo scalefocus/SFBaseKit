@@ -14,7 +14,7 @@ class LoginCoordinator: Coordinator {
     var navigationController: UINavigationController?
     
     override func start() {
-        let loginViewController = LoginViewController.instantiateFromStoryboard(withName: "Login Name", inBundle: nil) ?? UIViewController()
+        let loginViewController = LoginViewController.instantiateFromStoryboard() ?? UIViewController()
         navigationController = UINavigationController(rootViewController: loginViewController)
     }
 }

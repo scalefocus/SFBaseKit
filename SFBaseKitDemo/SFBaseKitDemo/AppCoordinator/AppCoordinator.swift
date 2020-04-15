@@ -11,5 +11,24 @@ import SFBaseKit
 
 class AppCoordinator: Coordinator {
     
+    // MARK: - Properties
+    var window: UIWindow?
+    
+    // MARK: - Initializer
+    init(window: UIWindow?) {
+        self.window = window
+        super.init()
+        
+        let navigationController = UINavigationController()
+        self.window?.rootViewController = navigationController
+        self.window?.makeKeyAndVisible()
+        
+        let loginCoordinator = LoginCoordinator()
+        addChildCoordinator(loginCoordinator)
+    }
+    
+    override func start() {
+        childCoordinators.first?.start()
+    }
    
 }

@@ -12,11 +12,18 @@ import SFBaseKit
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-   
+    // MARK: - Properties
+    var window: UIWindow?
+    var appCoordinator: Coordinator?
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+  
+        // Initialize the window and the appCoordinator
+        window = UIWindow(frame: UIScreen.main.bounds)
+        appCoordinator = AppCoordinator(window: window)
+        appCoordinator?.start()
         
-        print(BaseViewController.self)
         return true
     }
 
