@@ -10,7 +10,8 @@ import UIKit
 import SFBaseKit
 
 class ForgottenPasswordViewController: UIViewController {
-    
+        
+    // MARK: - Initializer
     override func viewDidLoad() {
         super.viewDidLoad()
     }

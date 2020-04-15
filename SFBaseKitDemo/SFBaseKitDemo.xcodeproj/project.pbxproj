@@ -18,7 +18,6 @@
 		4A9B659C2446E31E006AC1F9 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A9B659B2446E31E006AC1F9 /* LoginViewController.swift */; };
 		4A9B659E2446E345006AC1F9 /* ForgottenPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A9B659D2446E345006AC1F9 /* ForgottenPasswordViewController.swift */; };
 		67D9AA18A0734BDAF48DCD1C /* Pods_SFBaseKitDemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA55B648F1C9DF5E9B396D11 /* Pods_SFBaseKitDemoTests.framework */; };
-		C7225C3F2446FBB700FDA75B /* CoordinatableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7225C3E2446FBB700FDA75B /* CoordinatableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,7 +53,6 @@
 		6628F453123580B1C245D09C /* Pods-SFBaseKitDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SFBaseKitDemo.debug.xcconfig"; path = "Target Support Files/Pods-SFBaseKitDemo/Pods-SFBaseKitDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		A3DEBA88955E91D91D78B460 /* Pods-BaseKitDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaseKitDemoTests.debug.xcconfig"; path = "Target Support Files/Pods-BaseKitDemoTests/Pods-BaseKitDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B1698E08F63DF7B78EAA4A8F /* Pods-SFBaseKitDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SFBaseKitDemoTests.debug.xcconfig"; path = "Target Support Files/Pods-SFBaseKitDemoTests/Pods-SFBaseKitDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
-		C7225C3E2446FBB700FDA75B /* CoordinatableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatableViewController.swift; sourceTree = "<group>"; };
 		DA55B648F1C9DF5E9B396D11 /* Pods_SFBaseKitDemoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SFBaseKitDemoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -124,7 +122,6 @@
 			isa = PBXGroup;
 			children = (
 				4A9B65932446E0D1006AC1F9 /* AppCoordinator.swift */,
-				C7225C3E2446FBB700FDA75B /* CoordinatableViewController.swift */,
 			);
 			path = AppCoordinator;
 			sourceTree = "<group>";
@@ -336,7 +333,6 @@
 				4A9B659E2446E345006AC1F9 /* ForgottenPasswordViewController.swift in Sources */,
 				4A9B65942446E0D1006AC1F9 /* AppCoordinator.swift in Sources */,
 				115B2346239A63DC001A2472 /* AppDelegate.swift in Sources */,
-				C7225C3F2446FBB700FDA75B /* CoordinatableViewController.swift in Sources */,
 				4A9B65972446E20F006AC1F9 /* LoginCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -14,7 +14,7 @@ class AppCoordinator: Coordinator {
     // MARK: - Properties
     var window: UIWindow?
     
-    // MARK: - Initializer
+    // MARK: - Coordinator
     init(window: UIWindow?) {
         self.window = window
         super.init()

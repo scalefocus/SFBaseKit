@@ -9,19 +9,23 @@
 import UIKit
 import SFBaseKit
 
-class LoginViewController: UIViewController, CoordinatableViewController {
-   unowned var coordinatorDelegate: CoordinatorSceneDelegate!
+class LoginViewController: UIViewController {
     
+    // MARK: - Properties
+    unowned var sceneDelegate: LoginSceneDelegate!
+    
+    // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
+    // MARK: - Actions
     @IBAction func forgottenPasswordButtonOnPress(_ sender: Any) {
-        
+        sceneDelegate?.sceneShouldContinueToForgottenPassword()
     }
     
     @IBAction func loginButtonOnPress(_ sender: Any) {
-    
+        sceneDelegate?.sceneShouldContinueToLoginIn()
     }
 }
 
