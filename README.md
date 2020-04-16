@@ -99,7 +99,7 @@ class LoginCoordinator: Coordinator {
             navigationController.pushViewController(loginViewController, animated: false)
         }
 }
-    ```
+```
     
 To run the example project, clone the repo, and run ***pod install*** from the Example directory first.
 
