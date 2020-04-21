@@ -25,7 +25,7 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func loginButtonOnPress(_ sender: Any) {
-        sceneDelegate?.loginSceneShouldContinueToLoginIn()
+        sceneDelegate?.loginSceneShouldContinueToHome()
     }
 }
 

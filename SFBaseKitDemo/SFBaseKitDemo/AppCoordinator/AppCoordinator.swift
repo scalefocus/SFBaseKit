@@ -6,7 +6,6 @@
 //  Copyright © 2020 Upnetix. All rights reserved.
 //
 
-import Foundation
 import SFBaseKit
 
 class AppCoordinator: Coordinator {
@@ -24,11 +23,11 @@ class AppCoordinator: Coordinator {
         self.window?.makeKeyAndVisible()
         
         let loginCoordinator = LoginCoordinator(navigationController: navigationController)
+        loginCoordinator.parentCoordinator = self
         addChildCoordinator(loginCoordinator)
     }
     
     override func start() {
         childCoordinators.first?.start()
     }
-   
 }
