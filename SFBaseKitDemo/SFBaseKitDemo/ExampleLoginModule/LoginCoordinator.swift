@@ -35,7 +35,7 @@ class LoginCoordinator: Coordinator {
 extension LoginCoordinator: LoginSceneDelegate {
     func loginSceneShouldContinueToForgottenPassword() {
         guard let forgottenPasswordViewController = ForgottenPasswordViewController.instantiateFromStoryboard() else { return }
-        navigationController.pushViewController(forgottenPasswordViewController, animated: false)
+        navigationController.present(forgottenPasswordViewController, animated: true, completion: nil)
     }
     
     func loginSceneShouldContinueToLoginIn() {
