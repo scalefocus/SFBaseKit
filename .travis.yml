@@ -15,4 +15,5 @@ jobs:
       - stage: lint
         install: gem install cocoapods
         script:
+            - cd SFBaseKit
             - pod lib lint
