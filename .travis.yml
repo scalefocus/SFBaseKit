@@ -16,4 +16,4 @@ jobs:
         install: gem install cocoapods
         script:
             - cd SFBaseKit
-            - pod lib lint
+            - pod lib lint --allow-warnings
