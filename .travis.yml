@@ -1,0 +1,18 @@
+os: osx
+osx_image: xcode11.3
+language: swift
+
+branches:
+  only:
+    - master
+
+stages:
+  - name: lint
+    if: branch = master
+
+jobs:
+  include:
+      - stage: lint
+        install: gem install cocoapods
+        script:
+            - pod lib lint
