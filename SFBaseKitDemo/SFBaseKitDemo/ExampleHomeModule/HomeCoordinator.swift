@@ -8,30 +8,25 @@
 
 import SFBaseKit
 
-protocol HomeSceneDelegate: Coordinator {
-    
-}
-
 class HomeCoordinator: Coordinator {
     
-    unowned private var navController: UINavigationController!
+    unowned private let navigationController: UINavigationController
+    
+    init(navigationController: UINavigationController) {
+        self.navigationController = navigationController
+    }
     
     override func start() {
-        
-        // Instantiate Home Screen and add scene delegate.
-        let rootVC = HomeViewController.instantiateFromStoryboard()
-        rootVC?.sceneDelegate = self
-        
-        // As login flow is finished new navigation flow is started.
-        let navController = UINavigationController(rootViewController: rootVC ?? UIViewController())
-        self.navController = navController
-        let appDelegate = UIApplication.shared.delegate as? AppDelegate
-        appDelegate?.window?.rootViewController = navController
-        navController.popToRootViewController(animated: true)
+        guard let rootVC = HomeViewController.instantiateFromStoryboard() else { return }
+        rootVC.sceneDelegate = self
+        navigationController.pushViewController(rootVC, animated: true)
     }
 }
 
 // MARK: HomeScreenDelegate
 extension HomeCoordinator: HomeSceneDelegate {
-    
+    func homeSceneShouldContinueToLogOut() {
+        finish()
+        appCoordinator?.shouldShowLoginScene()
+    }
 }

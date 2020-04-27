@@ -8,12 +8,20 @@
 
 import SFBaseKit
 
+protocol HomeSceneDelegate: Coordinator {
+    func homeSceneShouldContinueToLogOut()
+}
+
 class HomeViewController: UIViewController {
     
     unowned var sceneDelegate: HomeSceneDelegate!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    @IBAction func DidTapOnLogOutButton(_ sender: Any) {
+        sceneDelegate.homeSceneShouldContinueToLogOut()
     }
 }
 

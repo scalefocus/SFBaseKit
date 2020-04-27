@@ -6,8 +6,12 @@
 //  Copyright © 2020 Upnetix. All rights reserved.
 //
 
-import UIKit
 import SFBaseKit
+
+protocol LoginSceneDelegate: Coordinator {
+    func loginSceneShouldContinueToForgottenPassword()
+    func loginSceneShouldContinueToHome()
+}
 
 class LoginViewController: UIViewController {
     

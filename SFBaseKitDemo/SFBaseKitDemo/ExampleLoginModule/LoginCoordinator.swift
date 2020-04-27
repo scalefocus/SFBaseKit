@@ -6,18 +6,12 @@
 //  Copyright © 2020 Upnetix. All rights reserved.
 //
 
-import Foundation
 import SFBaseKit
-
-protocol LoginSceneDelegate: Coordinator {
-    func loginSceneShouldContinueToForgottenPassword()
-    func loginSceneShouldContinueToHome()
-}
 
 class LoginCoordinator: Coordinator {
     
     // MARK: - Properties
-    unowned let navigationController: UINavigationController
+    unowned private let navigationController: UINavigationController
     
     // MARK: - Coordinator
     init(navigationController: UINavigationController) {
@@ -42,15 +36,7 @@ extension LoginCoordinator: LoginSceneDelegate {
     
     /// Application navigation flow after successful log in.
     func loginSceneShouldContinueToHome() {
-        
-        // Finish current coordinator.
         finish()
-        
-        // Start new coordinator.
-        let homeCoordinator = HomeCoordinator()
-        homeCoordinator.start()
-        
-        // Add new coordinator as child coordinator.
-        parentCoordinator?.addChildCoordinator(homeCoordinator)
+        appCoordinator?.shouldShowHomeScene()
     }
 }

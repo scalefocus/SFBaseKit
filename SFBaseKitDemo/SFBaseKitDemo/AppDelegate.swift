@@ -6,7 +6,6 @@
 //  Copyright © 2019 Upnetix. All rights reserved.
 //
 
-import UIKit
 import SFBaseKit
 
 @UIApplicationMain
@@ -14,7 +13,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     // MARK: - Properties
     var window: UIWindow?
-    var appCoordinator: Coordinator?
+    var appCoordinator: AppSceneDelegate?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         

@@ -18,6 +18,7 @@
 		4A9B659C2446E31E006AC1F9 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A9B659B2446E31E006AC1F9 /* LoginViewController.swift */; };
 		4A9B659E2446E345006AC1F9 /* ForgottenPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A9B659D2446E345006AC1F9 /* ForgottenPasswordViewController.swift */; };
 		67D9AA18A0734BDAF48DCD1C /* Pods_SFBaseKitDemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA55B648F1C9DF5E9B396D11 /* Pods_SFBaseKitDemoTests.framework */; };
+		C79A90112456BA04000AA412 /* Coordinator+AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79A90102456BA04000AA412 /* Coordinator+AppCoordinator.swift */; };
 		C7CA722F244ECFCB002D0076 /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CA722E244ECFCB002D0076 /* HomeCoordinator.swift */; };
 		C7CA7231244ECFEE002D0076 /* HomeScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7CA7230244ECFEE002D0076 /* HomeScreen.storyboard */; };
 		C7CA7233244ED008002D0076 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CA7232244ED008002D0076 /* HomeViewController.swift */; };
@@ -56,6 +57,7 @@
 		6628F453123580B1C245D09C /* Pods-SFBaseKitDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SFBaseKitDemo.debug.xcconfig"; path = "Target Support Files/Pods-SFBaseKitDemo/Pods-SFBaseKitDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		A3DEBA88955E91D91D78B460 /* Pods-BaseKitDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaseKitDemoTests.debug.xcconfig"; path = "Target Support Files/Pods-BaseKitDemoTests/Pods-BaseKitDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B1698E08F63DF7B78EAA4A8F /* Pods-SFBaseKitDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SFBaseKitDemoTests.debug.xcconfig"; path = "Target Support Files/Pods-SFBaseKitDemoTests/Pods-SFBaseKitDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
+		C79A90102456BA04000AA412 /* Coordinator+AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Coordinator+AppCoordinator.swift"; sourceTree = "<group>"; };
 		C7CA722E244ECFCB002D0076 /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
 		C7CA7230244ECFEE002D0076 /* HomeScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeScreen.storyboard; sourceTree = "<group>"; };
 		C7CA7232244ED008002D0076 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 				C7CA722D244ECFA3002D0076 /* ExampleHomeModule */,
 				4A9B65952446E12A006AC1F9 /* ExampleLoginModule */,
 				4A9B65922446E0A9006AC1F9 /* AppCoordinator */,
+				C79A900F2456B9AF000AA412 /* Extensions */,
 				115B2345239A63DC001A2472 /* AppDelegate.swift */,
 				115B234E239A63DC001A2472 /* Assets.xcassets */,
 				115B2350239A63DC001A2472 /* LaunchScreen.storyboard */,
@@ -136,20 +139,28 @@
 		4A9B65952446E12A006AC1F9 /* ExampleLoginModule */ = {
 			isa = PBXGroup;
 			children = (
-				4A9B65982446E278006AC1F9 /* LoginScreen.storyboard */,
 				4A9B65962446E20F006AC1F9 /* LoginCoordinator.swift */,
 				4A9B659B2446E31E006AC1F9 /* LoginViewController.swift */,
 				4A9B659D2446E345006AC1F9 /* ForgottenPasswordViewController.swift */,
+				4A9B65982446E278006AC1F9 /* LoginScreen.storyboard */,
 			);
 			path = ExampleLoginModule;
+			sourceTree = "<group>";
+		};
+		C79A900F2456B9AF000AA412 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C79A90102456BA04000AA412 /* Coordinator+AppCoordinator.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		C7CA722D244ECFA3002D0076 /* ExampleHomeModule */ = {
 			isa = PBXGroup;
 			children = (
 				C7CA722E244ECFCB002D0076 /* HomeCoordinator.swift */,
-				C7CA7230244ECFEE002D0076 /* HomeScreen.storyboard */,
 				C7CA7232244ED008002D0076 /* HomeViewController.swift */,
+				C7CA7230244ECFEE002D0076 /* HomeScreen.storyboard */,
 			);
 			path = ExampleHomeModule;
 			sourceTree = "<group>";
@@ -353,6 +364,7 @@
 				115B2346239A63DC001A2472 /* AppDelegate.swift in Sources */,
 				4A9B65972446E20F006AC1F9 /* LoginCoordinator.swift in Sources */,
 				C7CA7233244ED008002D0076 /* HomeViewController.swift in Sources */,
+				C79A90112456BA04000AA412 /* Coordinator+AppCoordinator.swift in Sources */,
 				C7CA722F244ECFCB002D0076 /* HomeCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
