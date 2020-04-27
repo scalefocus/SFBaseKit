@@ -27,7 +27,7 @@ SFBaseKit is available through [CocoaPods](https://cocoapods.org/pods/SFBaseKit)
 CocoaPods is a dependency manager for Cocoa projects. For usage and installation instructions, visit their website. To integrate SFBaseKit into your Xcode project using CocoaPods, specify it in your Podfile:
 
 ```ruby
-pod 'SFBaseKit', '~> 2.0'
+pod 'SFBaseKit', '~> 2.1.0'
 ```
 To get the full benefits import `SFBaseKit` at the start of the source file:
 
@@ -38,7 +38,7 @@ import SFBaseKit
 
 Carthage is a decentralized dependency manager that builds your dependencies and provides you with binary frameworks. To integrate SFBaseKit into your Xcode project using Carthage, specify it in your Cartfile:
 ```ruby
-github "scalefocus/SFBaseKit" ~> 2.0
+github "scalefocus/SFBaseKit" ~> 2.1.0
 ```
 ## Usage Example
 
