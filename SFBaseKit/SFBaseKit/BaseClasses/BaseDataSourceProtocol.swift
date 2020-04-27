@@ -8,7 +8,7 @@
 
 import UIKit
 
-/// Protocol establishing the base data srouce properties and methods in relation with `ViewConfigurator`.
+/// Protocol establishing the base data source properties and methods in relation with `ViewConfigurator`.
 /// Usable by both `UITableView` and `UICollectionView`.
 public protocol BaseDataSource {
     
@@ -31,9 +31,9 @@ public protocol BaseDataSource {
     /// Provides the viewConfigurator for your configurable table/collection view cell
     ///
     /// - Parameter index: The index path for the current cell
-    /// - Parameter setion: The section path for the current cell
+    /// - Parameter section: The section path for the current cell
     /// - Returns: A configurator from the viewModel
-    func viewConfigurator(at index: Int, in setion: Int) -> ViewConfigurator?
+    func viewConfigurator(at index: Int, in section: Int) -> ViewConfigurator?
     
     /// Provides the viewConfigurator for your configurable header view.
     /// - Parameter section: The given section
