@@ -133,6 +133,16 @@ open class BaseViewConfigurator<ConfigurableType: Configurable>: ViewConfigurato
 
 public extension UITableView {
     
+    /// Directly register cells and headerFooterViews with `BaseDataSource` confirming instance.
+    /// - Parameter dataSource: `BaseDataSource` confirming instance, containing information for `headerFooterReuseIdentifiers` and `reuseIdentifiers`.
+    func register(with dataSource: BaseDataSource) {
+        register(headerFooterNames: dataSource.headerFooterReuseIdentifiers)
+        register(cellNames: dataSource.reuseIdentifiers)
+    }
+    
+    /// Register an array of cell names <"\(YourCellClass.self)"> to be reused
+    ///
+    /// - Parameter cellNames: The array of names
     func register(cellNames: [String]) {
         cellNames.forEach {
             register(UINib(nibName: $0, bundle: nil),
@@ -163,18 +173,28 @@ public extension UITableView {
     
     /// Register an array of header names <"\(YourHeaderClass.self)"> to be reused
     ///
-    /// - Parameter headerNames: The array of names
-    func register(headerNames: String...) {
-        for headerName in headerNames {
-            register(UINib(nibName: headerName, bundle: nil), forHeaderFooterViewReuseIdentifier: headerName)
+    /// - Parameter headerFooterNames: The array of names
+    func register(headerFooterNames: [String]) {
+        headerFooterNames.forEach {
+            register(UINib(nibName: $0, bundle: nil),
+                     forHeaderFooterViewReuseIdentifier: $0)
         }
     }
     
-    /// Called in header or footer fot section. Configures a header and returns it
+    /// Register an array of header names <"\(YourHeaderClass.self)"> to be reused
+    ///
+    /// - Parameter headerFooterNames: The array of names
+    func register(headerFooterNames: String...) {
+        for headerFooterName in headerFooterNames {
+            register(UINib(nibName: headerFooterName, bundle: nil), forHeaderFooterViewReuseIdentifier: headerFooterName)
+        }
+    }
+    
+    /// Called in header or footer for section. Configures a headerFooterView and returns it.
     ///
     /// - Parameter configurator: The configurator for the header/footer (from the viewModel)
     /// - Returns: An already configured UITableViewHeaderFooterView
-    func configureHeader(for configurator: ViewConfigurator) -> UITableViewHeaderFooterView? {
+    func configureHeaderFooter(for configurator: ViewConfigurator) -> UITableViewHeaderFooterView? {
         guard let headerFooterView = dequeueReusableHeaderFooterView(withIdentifier: configurator.reuseIdentifier) else { return nil }
         configurator.configure(headerFooterView)
         return headerFooterView
