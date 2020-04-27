@@ -1,16 +1,16 @@
 PODS:
-  - SFBaseKit (2.0.0)
+  - SFBaseKit (2.1.0)
 
 DEPENDENCIES:
-  - SFBaseKit (from `../SFBaseKit`)
+  - SFBaseKit (from `../`)
 
 EXTERNAL SOURCES:
   SFBaseKit:
-    :path: "../SFBaseKit"
+    :path: "../"
 
 SPEC CHECKSUMS:
-  SFBaseKit: 2d4d818c6d71e201e222a55be48c89fd17b2da00
+  SFBaseKit: e1e020ab22e0bb75d93a554b6109658483b4e4d7
 
-PODFILE CHECKSUM: 514ae5c0cb852ebdaeac7c240f27d6465018007f
+PODFILE CHECKSUM: d075b4433a072aecb51a4b5e2b1e0b7cacadd2da
 
 COCOAPODS: 1.9.1
