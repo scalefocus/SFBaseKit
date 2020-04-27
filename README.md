@@ -22,28 +22,32 @@ Table of contents
 - Swift 4
 
 ## Installation
-
-SFBaseKit is available through [CocoaPods](https://cocoapods.org/pods/SFBaseKit). To install
-it, simply add the following line to your Podfile:
+### Cocoapods
+SFBaseKit is available through [CocoaPods](https://cocoapods.org/pods/SFBaseKit). 
+CocoaPods is a dependency manager for Cocoa projects. For usage and installation instructions, visit their website. To integrate SFBaseKit into your Xcode project using CocoaPods, specify it in your Podfile:
 
 ```ruby
-pod 'SFBaseKit'
+pod 'SFBaseKit', '~> 2.0'
 ```
-
 To get the full benefits import `SFBaseKit` at the start of the source file:
 
 ```swift
 import SFBaseKit
 ```
+### Carthage
 
+Carthage is a decentralized dependency manager that builds your dependencies and provides you with binary frameworks. To integrate SFBaseKit into your Xcode project using Carthage, specify it in your Cartfile:
+```ruby
+github "scalefocus/SFBaseKit" ~> 2.0
+```
 ## Usage Example
 
 ### Coordinator 
-
-#####Setup 
 Make sure to follow the steps below in order to have properly setup coordinator pattern.
-
 First step under app target on the **General tab**. In the **Deployment Info** section, remove the entry in the **Main Interface** field. 
+
+![Alt Text](https://media.giphy.com/media/MaUQAYDgXhFzj6Zvpo/giphy.gif)
+#### Setup #1 
 
 AppCoordinator and window should be initialized in **AppDelegate**
 ```swift
@@ -60,7 +64,9 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
         return true
     }
 ```
-** NOTE: Please note when using SceneDelegate! **
+# OR
+#### Setup #2
+
 Initialization of window and AppCoordinator should take place in **SceneDelegate** not in AppDelegate.
 ```swift
 var window: UIWindow?
@@ -112,5 +118,6 @@ SFBaseKit is available under the MIT license. See the LICENSE file for more info
 [swift-url]: https://swift.org/
 [license-image]: https://img.shields.io/badge/License-MIT-blue.svg
 [license-url]: LICENSE
+
 
 
