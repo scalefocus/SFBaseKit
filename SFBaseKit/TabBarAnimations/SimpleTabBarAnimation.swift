@@ -37,7 +37,10 @@ public extension SimpleTabBarAnimation {
         let barItemIndex = tabBar.items?.firstIndex(of: item) ?? 0
         let subviewIndex = barItemIndex + 1
         guard subviewIndex < tabBar.subviews.count,
-            let imageView = tabBar.subviews[subviewIndex].subviews.first as? UIImageView else { return }
+            let imageView = tabBar
+                .subviews[subviewIndex]
+                .subviews
+                .first(where: {$0 is UIImageView}) as? UIImageView else { return }
         
         switch type {
         case .bounce:
