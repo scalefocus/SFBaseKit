@@ -16,7 +16,7 @@ public enum TabBarItemAnimation {
     case custom((UIImageView) -> ())
 }
 
-public protocol SimpleTabBarAnimation: UITabBarController {
+public protocol SimpleTabBarAnimation {
     /// Animates UITabBarItem Image View with custom animation.
     ///
     /// Example implementation
@@ -32,7 +32,7 @@ public protocol SimpleTabBarAnimation: UITabBarController {
 }
 
 /// Implementation of SimpleTabBarAnimation
-public extension SimpleTabBarAnimation {
+public extension SimpleTabBarAnimation where Self: UITabBarController {
     func playAnimation(type: TabBarItemAnimation, for item: UITabBarItem) {
         let barItemIndex = tabBar.items?.firstIndex(of: item) ?? 0
         let subviewIndex = barItemIndex + 1
