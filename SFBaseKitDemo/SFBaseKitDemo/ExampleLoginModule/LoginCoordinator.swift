@@ -6,18 +6,12 @@
 //  Copyright © 2020 Upnetix. All rights reserved.
 //
 
-import Foundation
 import SFBaseKit
-
-protocol LoginSceneDelegate: Coordinator {
-    func loginSceneShouldContinueToForgottenPassword()
-    func loginSceneShouldContinueToLoginIn()
-}
 
 class LoginCoordinator: Coordinator {
     
     // MARK: - Properties
-    unowned let navigationController: UINavigationController
+    unowned private let navigationController: UINavigationController
     
     // MARK: - Coordinator
     init(navigationController: UINavigationController) {
@@ -33,15 +27,16 @@ class LoginCoordinator: Coordinator {
 
 // MARK: - LoginSceneDelegate
 extension LoginCoordinator: LoginSceneDelegate {
+    
+    /// Navigation flow for presenting forgotten password screen.
     func loginSceneShouldContinueToForgottenPassword() {
         guard let forgottenPasswordViewController = ForgottenPasswordViewController.instantiateFromStoryboard() else { return }
-        navigationController.pushViewController(forgottenPasswordViewController, animated: false)
+        navigationController.present(forgottenPasswordViewController, animated: true, completion: nil)
     }
     
-    func loginSceneShouldContinueToLoginIn() {
-        /* Initialize new coordinator to navigate to next scene.
-         Add the new coordinator to child coordinators.
-         start it.
-         */
+    /// Application navigation flow after successful log in.
+    func loginSceneShouldContinueToHome() {
+        finish()
+        appCoordinator?.shouldShowHomeScene()
     }
 }

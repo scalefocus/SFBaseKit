@@ -6,8 +6,12 @@
 //  Copyright © 2020 Upnetix. All rights reserved.
 //
 
-import UIKit
 import SFBaseKit
+
+protocol LoginSceneDelegate: Coordinator {
+    func loginSceneShouldContinueToForgottenPassword()
+    func loginSceneShouldContinueToHome()
+}
 
 class LoginViewController: UIViewController {
     
@@ -25,7 +29,7 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func loginButtonOnPress(_ sender: Any) {
-        sceneDelegate?.loginSceneShouldContinueToLoginIn()
+        sceneDelegate?.loginSceneShouldContinueToHome()
     }
 }
 

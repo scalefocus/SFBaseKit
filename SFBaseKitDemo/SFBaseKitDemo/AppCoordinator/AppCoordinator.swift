@@ -6,22 +6,28 @@
 //  Copyright © 2020 Upnetix. All rights reserved.
 //
 
-import Foundation
 import SFBaseKit
+
+protocol AppSceneDelegate: Coordinator {
+    
+    /// Starts navigation from First Login Scene.
+    func shouldShowLoginScene()
+    
+    /// Starts navigation from First Home Scene.
+    func shouldShowHomeScene()
+}
 
 class AppCoordinator: Coordinator {
     
     // MARK: - Properties
-    let window: UIWindow?
+    private let window: UIWindow?
     
     // MARK: - Coordinator
     init(window: UIWindow?) {
         self.window = window
         super.init()
         
-        let navigationController = UINavigationController()
-        self.window?.rootViewController = navigationController
-        self.window?.makeKeyAndVisible()
+        let navigationController = setWindowRootViewController()
         
         let loginCoordinator = LoginCoordinator(navigationController: navigationController)
         addChildCoordinator(loginCoordinator)
@@ -30,5 +36,28 @@ class AppCoordinator: Coordinator {
     override func start() {
         childCoordinators.first?.start()
     }
-   
+    
+    @discardableResult private func setWindowRootViewController() -> UINavigationController {
+        let navigationController = UINavigationController()
+        window?.rootViewController = navigationController
+        window?.makeKeyAndVisible()
+        return navigationController
+    }
+}
+
+// MARK: AppSceneDelegate
+extension AppCoordinator: AppSceneDelegate {
+    func shouldShowLoginScene() {
+        let navigationController = setWindowRootViewController()
+        let loginCoordinator = LoginCoordinator(navigationController: navigationController)
+        addChildCoordinator(loginCoordinator)
+        loginCoordinator.start()
+    }
+    
+    func shouldShowHomeScene() {
+        let navigationController = setWindowRootViewController()
+        let homeCoordinator = HomeCoordinator(navigationController: navigationController)
+        addChildCoordinator(homeCoordinator)
+        homeCoordinator.start()
+    }
 }
