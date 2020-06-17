@@ -8,7 +8,7 @@ Pod::Spec.new do |spec|
                    DESC
   spec.homepage     = "https://github.com/scalefocus/SFBaseKit"
   spec.license      = 'MIT'
-  spec.author       = { "Scalefocus" => "code@upnetix.com" }
+  spec.author       = { "Scalefocus" => "ios@scalefocus.com" }
   spec.platform     = :ios, "10.0"
   spec.swift_version = '5.0'
   spec.source       = { :git => "https://github.com/scalefocus/SFBaseKit.git", :tag => spec.version.to_s }
