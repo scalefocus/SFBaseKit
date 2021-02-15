@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		02091E9325DA9FDB009F2FFC /* UIStackView+ShowAndHideArrangedSubview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02091E9225DA9FDB009F2FFC /* UIStackView+ShowAndHideArrangedSubview.swift */; };
 		110A5A322399538B00FA0912 /* BaseKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 110A5A242399538B00FA0912 /* BaseKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		110A5A3D2399543000FA0912 /* StoryboardInstantiatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110A5A3C2399543000FA0912 /* StoryboardInstantiatable.swift */; };
 		110A5A4C2399545600FA0912 /* Array+SafeAtSubscript.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110A5A3F2399545600FA0912 /* Array+SafeAtSubscript.swift */; };
@@ -33,6 +34,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		02091E9225DA9FDB009F2FFC /* UIStackView+ShowAndHideArrangedSubview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+ShowAndHideArrangedSubview.swift"; sourceTree = "<group>"; };
 		110A5A212399538B00FA0912 /* SFBaseKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SFBaseKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		110A5A242399538B00FA0912 /* BaseKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseKit.h; sourceTree = "<group>"; };
 		110A5A252399538B00FA0912 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 				110A5A452399545600FA0912 /* UIView+Gradient.swift */,
 				110A5A462399545600FA0912 /* Url+OpenUrl.swift */,
 				110A5A472399545600FA0912 /* UIView+InspectableLayer.swift */,
+				02091E9225DA9FDB009F2FFC /* UIStackView+ShowAndHideArrangedSubview.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -252,6 +255,7 @@
 				110A5A602399545D00FA0912 /* BaseView.swift in Sources */,
 				110A5A542399545600FA0912 /* Bundle+VersionNumber.swift in Sources */,
 				110A5A662399546500FA0912 /* Coordinator+Equatable.swift in Sources */,
+				02091E9325DA9FDB009F2FFC /* UIStackView+ShowAndHideArrangedSubview.swift in Sources */,
 				110A5A572399545600FA0912 /* Array+UniqueAddRemove.swift in Sources */,
 				110A5A4D2399545600FA0912 /* UIView+CurrentFirstResponder.swift in Sources */,
 				110A5A4F2399545600FA0912 /* UICollectionView+EmptyCell.swift in Sources */,
