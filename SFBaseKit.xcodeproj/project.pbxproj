@@ -18,7 +18,7 @@
 		110A5A522399545600FA0912 /* Url+OpenUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110A5A462399545600FA0912 /* Url+OpenUrl.swift */; };
 		110A5A532399545600FA0912 /* UIView+InspectableLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110A5A472399545600FA0912 /* UIView+InspectableLayer.swift */; };
 		110A5A542399545600FA0912 /* Bundle+VersionNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110A5A482399545600FA0912 /* Bundle+VersionNumber.swift */; };
-		110A5A552399545600FA0912 /* NotificaitonName+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110A5A492399545600FA0912 /* NotificaitonName+Custom.swift */; };
+		110A5A552399545600FA0912 /* NotificationName+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110A5A492399545600FA0912 /* NotificationName+Custom.swift */; };
 		110A5A562399545600FA0912 /* String+Base64.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110A5A4A2399545600FA0912 /* String+Base64.swift */; };
 		110A5A572399545600FA0912 /* Array+UniqueAddRemove.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110A5A4B2399545600FA0912 /* Array+UniqueAddRemove.swift */; };
 		110A5A5D2399545D00FA0912 /* BaseViewConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110A5A592399545D00FA0912 /* BaseViewConfigurator.swift */; };
@@ -29,6 +29,8 @@
 		110A5A662399546500FA0912 /* Coordinator+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110A5A632399546500FA0912 /* Coordinator+Equatable.swift */; };
 		110A5A672399546500FA0912 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110A5A642399546500FA0912 /* Coordinator.swift */; };
 		4A8BD4CC24C5941D00EE41B1 /* Bundle+DecodeJSONFromFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8BD4CB24C5941D00EE41B1 /* Bundle+DecodeJSONFromFile.swift */; };
+		9635E062271EBDE0006E13BC /* Bindable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9635E061271EBDE0006E13BC /* Bindable.swift */; };
+		9635E064271EBE09006E13BC /* UIControls+Bindable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9635E063271EBE09006E13BC /* UIControls+Bindable.swift */; };
 		C75F8E3D241BA62F00B2A690 /* Array+RemoveFirstWhere.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75F8E3C241BA62F00B2A690 /* Array+RemoveFirstWhere.swift */; };
 		C77D470A247EB21C000A3A5C /* SimpleTabBarAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77D4709247EB21C000A3A5C /* SimpleTabBarAnimation.swift */; };
 		C9B7961C26553AE200762557 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B7961B26553AE200762557 /* Observable.swift */; };
@@ -48,7 +50,7 @@
 		110A5A462399545600FA0912 /* Url+OpenUrl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Url+OpenUrl.swift"; sourceTree = "<group>"; };
 		110A5A472399545600FA0912 /* UIView+InspectableLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+InspectableLayer.swift"; sourceTree = "<group>"; };
 		110A5A482399545600FA0912 /* Bundle+VersionNumber.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle+VersionNumber.swift"; sourceTree = "<group>"; };
-		110A5A492399545600FA0912 /* NotificaitonName+Custom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NotificaitonName+Custom.swift"; sourceTree = "<group>"; };
+		110A5A492399545600FA0912 /* NotificationName+Custom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NotificationName+Custom.swift"; sourceTree = "<group>"; };
 		110A5A4A2399545600FA0912 /* String+Base64.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Base64.swift"; sourceTree = "<group>"; };
 		110A5A4B2399545600FA0912 /* Array+UniqueAddRemove.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+UniqueAddRemove.swift"; sourceTree = "<group>"; };
 		110A5A592399545D00FA0912 /* BaseViewConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewConfigurator.swift; sourceTree = "<group>"; };
@@ -59,6 +61,8 @@
 		110A5A632399546500FA0912 /* Coordinator+Equatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Coordinator+Equatable.swift"; sourceTree = "<group>"; };
 		110A5A642399546500FA0912 /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		4A8BD4CB24C5941D00EE41B1 /* Bundle+DecodeJSONFromFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+DecodeJSONFromFile.swift"; sourceTree = "<group>"; };
+		9635E061271EBDE0006E13BC /* Bindable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bindable.swift; sourceTree = "<group>"; };
+		9635E063271EBE09006E13BC /* UIControls+Bindable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIControls+Bindable.swift"; sourceTree = "<group>"; };
 		C75F8E3C241BA62F00B2A690 /* Array+RemoveFirstWhere.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+RemoveFirstWhere.swift"; sourceTree = "<group>"; };
 		C77D4709247EB21C000A3A5C /* SimpleTabBarAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleTabBarAnimation.swift; sourceTree = "<group>"; };
 		C9B7961B26553AE200762557 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
@@ -110,6 +114,7 @@
 			children = (
 				110A5A3C2399543000FA0912 /* StoryboardInstantiatable.swift */,
 				C9B7961B26553AE200762557 /* Observable.swift */,
+				9635E061271EBDE0006E13BC /* Bindable.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -120,7 +125,7 @@
 				110A5A3F2399545600FA0912 /* Array+SafeAtSubscript.swift */,
 				110A5A402399545600FA0912 /* UIKit */,
 				110A5A482399545600FA0912 /* Bundle+VersionNumber.swift */,
-				110A5A492399545600FA0912 /* NotificaitonName+Custom.swift */,
+				110A5A492399545600FA0912 /* NotificationName+Custom.swift */,
 				110A5A4A2399545600FA0912 /* String+Base64.swift */,
 				110A5A4B2399545600FA0912 /* Array+UniqueAddRemove.swift */,
 				C75F8E3C241BA62F00B2A690 /* Array+RemoveFirstWhere.swift */,
@@ -139,6 +144,7 @@
 				110A5A452399545600FA0912 /* UIView+Gradient.swift */,
 				110A5A462399545600FA0912 /* Url+OpenUrl.swift */,
 				110A5A472399545600FA0912 /* UIView+InspectableLayer.swift */,
+				9635E063271EBE09006E13BC /* UIControls+Bindable.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -258,6 +264,7 @@
 				110A5A5E2399545D00FA0912 /* BaseDataSourceProtocol.swift in Sources */,
 				110A5A602399545D00FA0912 /* BaseView.swift in Sources */,
 				110A5A542399545600FA0912 /* Bundle+VersionNumber.swift in Sources */,
+				9635E064271EBE09006E13BC /* UIControls+Bindable.swift in Sources */,
 				110A5A662399546500FA0912 /* Coordinator+Equatable.swift in Sources */,
 				110A5A572399545600FA0912 /* Array+UniqueAddRemove.swift in Sources */,
 				110A5A4D2399545600FA0912 /* UIView+CurrentFirstResponder.swift in Sources */,
@@ -272,8 +279,9 @@
 				110A5A4E2399545600FA0912 /* UIColor+HexStringInit.swift in Sources */,
 				110A5A4C2399545600FA0912 /* Array+SafeAtSubscript.swift in Sources */,
 				110A5A502399545600FA0912 /* UIView+Animations.swift in Sources */,
+				9635E062271EBDE0006E13BC /* Bindable.swift in Sources */,
 				110A5A5F2399545D00FA0912 /* BaseViewController.swift in Sources */,
-				110A5A552399545600FA0912 /* NotificaitonName+Custom.swift in Sources */,
+				110A5A552399545600FA0912 /* NotificationName+Custom.swift in Sources */,
 				C77D470A247EB21C000A3A5C /* SimpleTabBarAnimation.swift in Sources */,
 				110A5A522399545600FA0912 /* Url+OpenUrl.swift in Sources */,
 			);

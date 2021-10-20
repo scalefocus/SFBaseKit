@@ -32,12 +32,42 @@ public final class Observable<T> {
     }
     
     /// Attaches a closure to execute when the binding value changes.
+    /// The closure is executed on attachment.
     /// - Parameter receiveValue: The closure to execute with the new value.
-    public func sink(on dispatchQueue: DispatchQueue = .main, receiveValue: @escaping (T) -> Void) {
+    public func sinkAndFire(on dispatchQueue: DispatchQueue = .main, receiveValue: @escaping (T) -> Void) {
         subject
             .receive(on: dispatchQueue)
             .sink(receiveValue: receiveValue)
             .store(in: &cancellables)
+    }
+    
+    /// Attaches a closure to execute when the binding value changes.
+    /// The closure is not executed on attachment.
+    /// - Parameter receiveValue: The closure to execute with the new value.
+    public func sink(on dispatchQueue: DispatchQueue = .main, receiveValue: @escaping (T) -> Void) {
+        subject
+            .dropFirst()
+            .receive(on: dispatchQueue)
+            .sink(receiveValue: receiveValue)
+            .store(in: &cancellables)
+    }
+    
+    /// Binds the observable value to the values received from a Bindable's Publisher.
+    /// - Parameters:
+    ///   - bindable: A bindable object to receive values from.
+    public func sink<B: Bindable>(with bindable: B, on dispatchQueue: DispatchQueue = .main) {
+        bindable.publisher
+            .map { bindable.value(from: $0) }
+            .receive(on: dispatchQueue)
+            .sink { [weak self] in self?.setValue($0 as? T) }
+            .store(in: &cancellables)
+    }
+    
+    /// Sets the observable value.
+    private func setValue(_ value: T?) {
+        guard let value = value else { return }
+        
+        self.value = value
     }
 }
 #endif

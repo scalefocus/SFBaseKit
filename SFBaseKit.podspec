@@ -1,7 +1,7 @@
 Pod::Spec.new do |spec|
 
   spec.name         = "SFBaseKit"
-  spec.version      = '3.0.0'
+  spec.version      = '3.1.0'
   spec.summary      = "Commonly used utilities and extensions, not-contained in native iOS frameworks."
   spec.description  = <<-DESC
   This framework includes Utils, Extensions, BaseClasses and Coordinator approach. Could be used among all projects.
