@@ -21,6 +21,10 @@ extension UITextField: Bindable {
         guard let object = output.object as? UITextField else { return "" }
         return object.text ?? ""
     }
+    
+    public func setValue(_ value: String, animateUpdates: Bool) {
+        text = value
+    }
 }
 
 // MARK: - UISwitch + Bindable
@@ -37,6 +41,10 @@ extension UISwitch: Bindable {
     public func value(from output: NotificationCenter.Publisher.Output) -> BindingType {
         guard let object = output.object as? UISwitch else { return false }
         return object.isOn
+    }
+    
+    public func setValue(_ value: Bool, animateUpdates: Bool) {
+        setOn(value, animated: animateUpdates)
     }
     
     @objc private func switchChanged() {
@@ -60,6 +68,10 @@ extension UISlider: Bindable {
         return object.value
     }
     
+    public func setValue(_ value: Float, animateUpdates: Bool) {
+        setValue(value, animated: animateUpdates)
+    }
+    
     @objc private func sliderChanged() {
         NotificationCenter.default.post(Notification(name: .sliderDidChangeValue, object: self))
     }
@@ -79,6 +91,10 @@ extension UIStepper: Bindable {
     public func value(from output: NotificationCenter.Publisher.Output) -> BindingType {
         guard let object = output.object as? UIStepper else { return 0 }
         return object.value
+    }
+    
+    public func setValue(_ value: Double, animateUpdates: Bool) {
+        self.value = value
     }
     
     @objc private func stepperChanged() {
@@ -102,6 +118,10 @@ extension UISegmentedControl: Bindable {
         return object.selectedSegmentIndex
     }
     
+    public func setValue(_ value: Int, animateUpdates: Bool) {
+        selectedSegmentIndex = value
+    }
+    
     @objc private func selectedIndexChanged() {
         NotificationCenter.default.post(Notification(name: .segementedControlDidChangeSelectedIndex, object: self))
     }
@@ -121,6 +141,10 @@ extension UIDatePicker: Bindable {
     public func value(from output: NotificationCenter.Publisher.Output) -> BindingType {
         guard let object = output.object as? UIDatePicker else { return Date() }
         return object.date
+    }
+    
+    public func setValue(_ value: Date, animateUpdates: Bool) {
+        setDate(value, animated: animateUpdates)
     }
     
     @objc private func datePickerChanged() {
@@ -144,6 +168,10 @@ extension UIPageControl: Bindable {
         return object.currentPage
     }
     
+    public func setValue(_ value: Int, animateUpdates: Bool) {
+        currentPage = value
+    }
+    
     @objc private func currentPageChanged() {
         NotificationCenter.default.post(Notification(name: .pageControlDidChangeCurrentPage, object: self))
     }
@@ -163,6 +191,10 @@ extension UIColorWell: Bindable {
     public func value(from output: NotificationCenter.Publisher.Output) -> BindingType {
         guard let object = output.object as? UIColorWell else { return .clear }
         return object.selectedColor ?? .clear
+    }
+    
+    public func setValue(_ value: UIColor, animateUpdates: Bool) {
+        selectedColor = value
     }
     
     @objc private func selectedColorChanged() {

@@ -20,4 +20,9 @@ public protocol Bindable: UIControl {
     /// Returns a value of the BindingType from a given publisher output.
     /// - Parameter output: The publisher output to extract a value from.
     func value(from output: NotificationCenter.Publisher.Output) -> BindingType
+    
+    /// Updates the relevant value of the Bindable based on changes to the bound observable property's value.
+    /// - Parameters:
+    ///   - animateUpdates: Animates the value change if the Bindable's UIControl type supports it.
+    func setValue(_ value: BindingType, animateUpdates: Bool)
 }

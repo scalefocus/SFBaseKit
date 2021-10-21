@@ -55,12 +55,18 @@ public final class Observable<T> {
     /// Binds the observable value to the values received from a Bindable's Publisher.
     /// - Parameters:
     ///   - bindable: A bindable object to receive values from.
-    public func sink<B: Bindable>(with bindable: B, on dispatchQueue: DispatchQueue = .main) {
+    public func sink<B: Bindable>(with bindable: B, on dispatchQueue: DispatchQueue = .main, animateUpdates: Bool = true) {
         bindable.publisher
             .map { bindable.value(from: $0) }
             .receive(on: dispatchQueue)
             .sink { [weak self] in self?.setValue($0 as? T) }
             .store(in: &cancellables)
+        
+        sinkAndFire { value in
+            guard let value = value as? B.BindingType else { return }
+            
+            bindable.setValue(value, animateUpdates: animateUpdates)
+        }
     }
     
     /// Sets the observable value.
