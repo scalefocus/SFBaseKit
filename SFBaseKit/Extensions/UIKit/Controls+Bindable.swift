@@ -1,5 +1,5 @@
 //
-//  UIControls+Bindable.swift
+//  Controls+Bindable.swift
 //  SFBaseKit
 //
 //  Created by Nikola B Nikolov on 19.10.21.
@@ -51,6 +51,25 @@ extension UISwitch: Bindable {
     
     @objc private func switchChanged() {
         NotificationCenter.default.post(Notification(name: .switchDidChangeState, object: self))
+    }
+}
+
+// MARK: - UITextView + Bindable
+@available(iOS 13, *)
+extension UITextView: Bindable {
+    public typealias BindingType = String
+    
+    public var publisher: NotificationCenter.Publisher {
+        NotificationCenter.default.publisher(for: UITextView.textDidChangeNotification, object: self)
+    }
+    
+    public func value(from output: NotificationCenter.Publisher.Output) -> BindingType {
+        guard let object = output.object as? UITextView else { return "" }
+        return object.text
+    }
+    
+    public func setValue(_ value: String, animateUpdates: Bool) {
+        text = value
     }
 }
 

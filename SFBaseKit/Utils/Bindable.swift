@@ -9,7 +9,7 @@
 import UIKit
 
 @available(iOS 13, *)
-public protocol Bindable: UIControl {
+public protocol Bindable {
     
     /// Type of values associated with the bindable.
     associatedtype BindingType
@@ -26,7 +26,7 @@ public protocol Bindable: UIControl {
     
     /// Updates the relevant value of the Bindable based on changes to the bound observable property's value.
     /// - Parameters:
-    ///   - animateUpdates: Animates the value change if the Bindable's UIControl type supports it.
+    ///   - animateUpdates: Animates the value change if the Bindable's control type supports it.
     func setValue(_ value: BindingType, animateUpdates: Bool)
 }
 
