@@ -33,9 +33,11 @@ extension UISwitch: Bindable {
     public typealias BindingType = Bool
     
     public var publisher: NotificationCenter.Publisher {
+        NotificationCenter.default.publisher(for: .switchDidChangeState, object: self)
+    }
+    
+    public func addTarget() {
         addTarget(self, action: #selector(switchChanged), for: .valueChanged)
-        
-        return NotificationCenter.default.publisher(for: .switchDidChangeState, object: self)
     }
     
     public func value(from output: NotificationCenter.Publisher.Output) -> BindingType {
@@ -58,9 +60,11 @@ extension UISlider: Bindable {
     public typealias BindingType = Float
     
     public var publisher: NotificationCenter.Publisher {
+        NotificationCenter.default.publisher(for: .sliderDidChangeValue, object: self)
+    }
+    
+    public func addTarget() {
         addTarget(self, action: #selector(sliderChanged), for: .valueChanged)
-        
-        return NotificationCenter.default.publisher(for: .sliderDidChangeValue, object: self)
     }
     
     public func value(from output: NotificationCenter.Publisher.Output) -> BindingType {
@@ -83,9 +87,11 @@ extension UIStepper: Bindable {
     public typealias BindingType = Double
     
     public var publisher: NotificationCenter.Publisher {
+        NotificationCenter.default.publisher(for: .stepperDidChangeValue, object: self)
+    }
+    
+    public func addTarget() {
         addTarget(self, action: #selector(stepperChanged), for: .valueChanged)
-        
-        return NotificationCenter.default.publisher(for: .stepperDidChangeValue, object: self)
     }
     
     public func value(from output: NotificationCenter.Publisher.Output) -> BindingType {
@@ -108,9 +114,11 @@ extension UISegmentedControl: Bindable {
     public typealias BindingType = Int
     
     public var publisher: NotificationCenter.Publisher {
+        NotificationCenter.default.publisher(for: .segementedControlDidChangeSelectedIndex, object: self)
+    }
+    
+    public func addTarget() {
         addTarget(self, action: #selector(selectedIndexChanged), for: .valueChanged)
-        
-        return NotificationCenter.default.publisher(for: .segementedControlDidChangeSelectedIndex, object: self)
     }
     
     public func value(from output: NotificationCenter.Publisher.Output) -> BindingType {
@@ -133,9 +141,11 @@ extension UIDatePicker: Bindable {
     public typealias BindingType = Date
     
     public var publisher: NotificationCenter.Publisher {
+        NotificationCenter.default.publisher(for: .datePickerDidChangeValue, object: self)
+    }
+    
+    public func addTarget() {
         addTarget(self, action: #selector(datePickerChanged), for: .valueChanged)
-        
-        return NotificationCenter.default.publisher(for: .datePickerDidChangeValue, object: self)
     }
     
     public func value(from output: NotificationCenter.Publisher.Output) -> BindingType {
@@ -158,9 +168,11 @@ extension UIPageControl: Bindable {
     public typealias BindingType = Int
     
     public var publisher: NotificationCenter.Publisher {
+        NotificationCenter.default.publisher(for: .pageControlDidChangeCurrentPage, object: self)
+    }
+    
+    public func addTarget() {
         addTarget(self, action: #selector(currentPageChanged), for: .valueChanged)
-        
-        return NotificationCenter.default.publisher(for: .pageControlDidChangeCurrentPage, object: self)
     }
     
     public func value(from output: NotificationCenter.Publisher.Output) -> BindingType {
@@ -183,9 +195,11 @@ extension UIColorWell: Bindable {
     public typealias BindingType = UIColor
     
     public var publisher: NotificationCenter.Publisher {
+        NotificationCenter.default.publisher(for: .colorWellDidChangeSelectedColor, object: self)
+    }
+    
+    public func addTarget() {
         addTarget(self, action: #selector(selectedColorChanged), for: .valueChanged)
-        
-        return NotificationCenter.default.publisher(for: .colorWellDidChangeSelectedColor, object: self)
     }
     
     public func value(from output: NotificationCenter.Publisher.Output) -> BindingType {

@@ -56,6 +56,7 @@ public final class Observable<T> {
     /// - Parameters:
     ///   - bindable: A bindable object to receive values from.
     public func sink<B: Bindable>(with bindable: B, on dispatchQueue: DispatchQueue = .main, animateUpdates: Bool = true) {
+        bindable.addTarget()
         bindable.publisher
             .map { bindable.value(from: $0) }
             .receive(on: dispatchQueue)

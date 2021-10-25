@@ -17,6 +17,9 @@ public protocol Bindable: UIControl {
     /// Publisher of the values.
     var publisher: NotificationCenter.Publisher { get }
     
+    /// Adds a target that calls the NotificationCenter to post the appropriate notification for the valueChanged event.
+    func addTarget()
+    
     /// Returns a value of the BindingType from a given publisher output.
     /// - Parameter output: The publisher output to extract a value from.
     func value(from output: NotificationCenter.Publisher.Output) -> BindingType
@@ -25,4 +28,10 @@ public protocol Bindable: UIControl {
     /// - Parameters:
     ///   - animateUpdates: Animates the value change if the Bindable's UIControl type supports it.
     func setValue(_ value: BindingType, animateUpdates: Bool)
+}
+
+/// Extension providing a default implementation of `addTarget()` for Bindables that don't use it.
+@available(iOS 13, *)
+public extension Bindable {
+    func addTarget() {}
 }
