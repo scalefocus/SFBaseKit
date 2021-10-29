@@ -11,15 +11,12 @@ import UIKit
 // MARK: - UITextField + Bindable
 @available(iOS 13, *)
 extension UITextField: Bindable {
-    public typealias BindingType = String
-    
     public var publisher: NotificationCenter.Publisher {
         NotificationCenter.default.publisher(for: UITextField.textDidChangeNotification, object: self)
     }
     
-    public func value(from output: NotificationCenter.Publisher.Output) -> BindingType {
-        guard let object = output.object as? UITextField else { return "" }
-        return object.text ?? ""
+    public var value: String {
+        text ?? ""
     }
     
     public func setValue(_ value: String, animateUpdates: Bool) {
@@ -30,19 +27,16 @@ extension UITextField: Bindable {
 // MARK: - UISwitch + Bindable
 @available(iOS 13, *)
 extension UISwitch: Bindable {
-    public typealias BindingType = Bool
-    
     public var publisher: NotificationCenter.Publisher {
         NotificationCenter.default.publisher(for: .switchDidChangeState, object: self)
     }
     
-    public func addTarget() {
-        addTarget(self, action: #selector(switchChanged), for: .valueChanged)
+    public var value: Bool {
+        isOn
     }
     
-    public func value(from output: NotificationCenter.Publisher.Output) -> BindingType {
-        guard let object = output.object as? UISwitch else { return false }
-        return object.isOn
+    public func addTarget() {
+        addTarget(self, action: #selector(switchChanged), for: .valueChanged)
     }
     
     public func setValue(_ value: Bool, animateUpdates: Bool) {
@@ -57,15 +51,12 @@ extension UISwitch: Bindable {
 // MARK: - UITextView + Bindable
 @available(iOS 13, *)
 extension UITextView: Bindable {
-    public typealias BindingType = String
-    
     public var publisher: NotificationCenter.Publisher {
         NotificationCenter.default.publisher(for: UITextView.textDidChangeNotification, object: self)
     }
     
-    public func value(from output: NotificationCenter.Publisher.Output) -> BindingType {
-        guard let object = output.object as? UITextView else { return "" }
-        return object.text
+    public var value: String {
+        text ?? ""
     }
     
     public func setValue(_ value: String, animateUpdates: Bool) {
@@ -76,19 +67,12 @@ extension UITextView: Bindable {
 // MARK: - UISlider + Bindable
 @available(iOS 13, *)
 extension UISlider: Bindable {
-    public typealias BindingType = Float
-    
     public var publisher: NotificationCenter.Publisher {
         NotificationCenter.default.publisher(for: .sliderDidChangeValue, object: self)
     }
     
     public func addTarget() {
         addTarget(self, action: #selector(sliderChanged), for: .valueChanged)
-    }
-    
-    public func value(from output: NotificationCenter.Publisher.Output) -> BindingType {
-        guard let object = output.object as? UISlider else { return 0 }
-        return object.value
     }
     
     public func setValue(_ value: Float, animateUpdates: Bool) {
@@ -103,19 +87,12 @@ extension UISlider: Bindable {
 // MARK: - UIStepper + Bindable
 @available(iOS 13, *)
 extension UIStepper: Bindable {
-    public typealias BindingType = Double
-    
     public var publisher: NotificationCenter.Publisher {
         NotificationCenter.default.publisher(for: .stepperDidChangeValue, object: self)
     }
     
     public func addTarget() {
         addTarget(self, action: #selector(stepperChanged), for: .valueChanged)
-    }
-    
-    public func value(from output: NotificationCenter.Publisher.Output) -> BindingType {
-        guard let object = output.object as? UIStepper else { return 0 }
-        return object.value
     }
     
     public func setValue(_ value: Double, animateUpdates: Bool) {
@@ -130,19 +107,16 @@ extension UIStepper: Bindable {
 // MARK: - UISegmentedControl + Bindable
 @available(iOS 13, *)
 extension UISegmentedControl: Bindable {
-    public typealias BindingType = Int
-    
     public var publisher: NotificationCenter.Publisher {
         NotificationCenter.default.publisher(for: .segementedControlDidChangeSelectedIndex, object: self)
     }
     
-    public func addTarget() {
-        addTarget(self, action: #selector(selectedIndexChanged), for: .valueChanged)
+    public var value: Int {
+        selectedSegmentIndex
     }
     
-    public func value(from output: NotificationCenter.Publisher.Output) -> BindingType {
-        guard let object = output.object as? UISegmentedControl else { return 0 }
-        return object.selectedSegmentIndex
+    public func addTarget() {
+        addTarget(self, action: #selector(selectedIndexChanged), for: .valueChanged)
     }
     
     public func setValue(_ value: Int, animateUpdates: Bool) {
@@ -157,19 +131,16 @@ extension UISegmentedControl: Bindable {
 // MARK: - UIDatePicker + Bindable
 @available(iOS 13, *)
 extension UIDatePicker: Bindable {
-    public typealias BindingType = Date
-    
     public var publisher: NotificationCenter.Publisher {
         NotificationCenter.default.publisher(for: .datePickerDidChangeValue, object: self)
     }
     
-    public func addTarget() {
-        addTarget(self, action: #selector(datePickerChanged), for: .valueChanged)
+    public var value: Date {
+        date
     }
     
-    public func value(from output: NotificationCenter.Publisher.Output) -> BindingType {
-        guard let object = output.object as? UIDatePicker else { return Date() }
-        return object.date
+    public func addTarget() {
+        addTarget(self, action: #selector(datePickerChanged), for: .valueChanged)
     }
     
     public func setValue(_ value: Date, animateUpdates: Bool) {
@@ -184,19 +155,16 @@ extension UIDatePicker: Bindable {
 // MARK: - UIPageControl + Bindable
 @available(iOS 13, *)
 extension UIPageControl: Bindable {
-    public typealias BindingType = Int
-    
     public var publisher: NotificationCenter.Publisher {
         NotificationCenter.default.publisher(for: .pageControlDidChangeCurrentPage, object: self)
     }
     
-    public func addTarget() {
-        addTarget(self, action: #selector(currentPageChanged), for: .valueChanged)
+    public var value: Int {
+        currentPage
     }
     
-    public func value(from output: NotificationCenter.Publisher.Output) -> BindingType {
-        guard let object = output.object as? UIPageControl else { return 0 }
-        return object.currentPage
+    public func addTarget() {
+        addTarget(self, action: #selector(currentPageChanged), for: .valueChanged)
     }
     
     public func setValue(_ value: Int, animateUpdates: Bool) {
@@ -211,19 +179,16 @@ extension UIPageControl: Bindable {
 // MARK: - UIColorWell + Bindable
 @available(iOS 14, *)
 extension UIColorWell: Bindable {
-    public typealias BindingType = UIColor
-    
     public var publisher: NotificationCenter.Publisher {
         NotificationCenter.default.publisher(for: .colorWellDidChangeSelectedColor, object: self)
     }
     
-    public func addTarget() {
-        addTarget(self, action: #selector(selectedColorChanged), for: .valueChanged)
+    public var value: UIColor {
+        selectedColor ?? .clear
     }
     
-    public func value(from output: NotificationCenter.Publisher.Output) -> BindingType {
-        guard let object = output.object as? UIColorWell else { return .clear }
-        return object.selectedColor ?? .clear
+    public func addTarget() {
+        addTarget(self, action: #selector(selectedColorChanged), for: .valueChanged)
     }
     
     public func setValue(_ value: UIColor, animateUpdates: Bool) {

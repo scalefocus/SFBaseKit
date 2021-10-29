@@ -58,7 +58,7 @@ public final class Observable<T> {
     public func sink<B: Bindable>(with bindable: B, on dispatchQueue: DispatchQueue = .main, animateUpdates: Bool = true) {
         bindable.addTarget()
         bindable.publisher
-            .map { bindable.value(from: $0) }
+            .compactMap { ($0.object as? B)?.value }
             .receive(on: dispatchQueue)
             .sink { [weak self] in self?.setValue($0 as? T) }
             .store(in: &cancellables)

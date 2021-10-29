@@ -17,12 +17,11 @@ public protocol Bindable {
     /// Publisher of the values.
     var publisher: NotificationCenter.Publisher { get }
     
+    /// Value of the BindingType.
+    var value: BindingType { get }
+    
     /// Adds a target that calls the NotificationCenter to post the appropriate notification for the valueChanged event.
     func addTarget()
-    
-    /// Returns a value of the BindingType from a given publisher output.
-    /// - Parameter output: The publisher output to extract a value from.
-    func value(from output: NotificationCenter.Publisher.Output) -> BindingType
     
     /// Updates the relevant value of the Bindable based on changes to the bound observable property's value.
     /// - Parameters:
