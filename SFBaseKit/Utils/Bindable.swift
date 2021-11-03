@@ -25,6 +25,7 @@ public protocol Bindable {
     
     /// Updates the relevant value of the Bindable based on changes to the bound observable property's value.
     /// - Parameters:
+    ///   - value: Value to set.
     ///   - animateUpdates: Animates the value change if the Bindable's control type supports it.
     func setValue(_ value: BindingType, animateUpdates: Bool)
 }

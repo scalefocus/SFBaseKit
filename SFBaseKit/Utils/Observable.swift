@@ -33,7 +33,9 @@ public final class Observable<T> {
     
     /// Attaches a closure to execute when the binding value changes.
     /// The closure is executed on attachment.
-    /// - Parameter receiveValue: The closure to execute with the new value.
+    /// - Parameters:
+    ///   - dispatchQueue: dispatchQueue on which to receive elements from the publisher.
+    ///   - receiveValue: The closure to execute with the new value.
     public func sinkAndFire(on dispatchQueue: DispatchQueue = .main, receiveValue: @escaping (T) -> Void) {
         subject
             .receive(on: dispatchQueue)
@@ -43,7 +45,9 @@ public final class Observable<T> {
     
     /// Attaches a closure to execute when the binding value changes.
     /// The closure is not executed on attachment.
-    /// - Parameter receiveValue: The closure to execute with the new value.
+    /// - Parameters:
+    ///   - dispatchQueue: dispatchQueue on which to receive elements from the publisher.
+    ///   - receiveValue: The closure to execute with the new value.
     public func sink(on dispatchQueue: DispatchQueue = .main, receiveValue: @escaping (T) -> Void) {
         subject
             .dropFirst()
@@ -55,6 +59,8 @@ public final class Observable<T> {
     /// Binds the observable value to the values received from a Bindable's Publisher.
     /// - Parameters:
     ///   - bindable: A bindable object to receive values from.
+    ///   - dispatchQueue: The dispatchQueue on which to receive elements from the publisher.
+    ///   - animateUpdates: Animate value changes if the Bindable's control type supports it.
     public func sink<B: Bindable>(with bindable: B, on dispatchQueue: DispatchQueue = .main, animateUpdates: Bool = true) {
         bindable.addTarget()
         bindable.publisher
@@ -71,6 +77,7 @@ public final class Observable<T> {
     }
     
     /// Sets the observable value.
+    /// - Parameter value: Value to set.
     private func setValue(_ value: T?) {
         guard let value = value else { return }
         
