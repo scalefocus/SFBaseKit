@@ -123,7 +123,8 @@ struct ExampleViewModel {
 ```
 
 #### ViewController 
-To bind an Observable with UIControls and vice versa - *sink* should be called in ViewController. 
+To create an Observable binding - *sink* or *sinkAndFire* should be called in ViewController.
+To bind an Observable with UIControls - *oneWayBind* or *twoWayBind* should be called in ViewController. 
 ```swift
 @IBOutlet private weak var nameLabel: UILabel!
 @IBOutlet private weak var emailTextField: UITextField!
@@ -138,7 +139,7 @@ private func setupBinding() {
         self?.nameLabel.text = name
     }
     
-    viewModel.email.sink(with: emailTextField)
+    viewModel.email.oneWayBind(with: emailTextField)
 }
 ```
 
