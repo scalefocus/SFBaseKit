@@ -82,13 +82,7 @@ public final class Observable<T> {
     public func twoWayBind<B: Bindable>(with bindable: B,
                                         on dispatchQueue: DispatchQueue = .main,
                                         animateUpdates: Bool = true) {
-        bindable.addTarget()
-        bindable.publisher
-            .compactMap { ($0.object as? B)?.value }
-            .receive(on: dispatchQueue)
-            .sink { [weak self] in self?.setValue($0 as? T) }
-            .store(in: &cancellables)
-        
+        oneWayBind(with: bindable, on: dispatchQueue, animateUpdates: animateUpdates)
         sinkAndFire { value in
             guard let value = value as? B.BindingType else { return }
             
