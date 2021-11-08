@@ -60,9 +60,8 @@ public final class Observable<T> {
     /// Changes to the observable value do not update the Bindable's value.
     /// - Parameters:
     ///   - bindable: A bindable object to receive values from.
-    ///   - dispatchQueue: The dispatchQueue on which to receive elements from the publisher.
-    public func oneWayBind<B: Bindable>(with bindable: B,
-                                        on dispatchQueue: DispatchQueue = .main) {
+    ///   - dispatchQueue: The dispatchQueue on which to receive elements from the publisher. Default is `main`.
+    public func oneWayBind<B: Bindable>(with bindable: B, on dispatchQueue: DispatchQueue = .main) {
         bindable.addTarget()
         bindable.publisher
             .compactMap { ($0.object as? B)?.value }
@@ -75,8 +74,8 @@ public final class Observable<T> {
     /// Changes to the observable value update the Bindable's value.
     /// - Parameters:
     ///   - bindable: A bindable object to receive values from.
-    ///   - dispatchQueue: The dispatchQueue on which to receive elements from the publisher.
-    ///   - animateUpdates: Animate value changes if the Bindable's control type supports it.
+    ///   - dispatchQueue: The dispatchQueue on which to receive elements from the publisher. Default is `main`.
+    ///   - animateUpdates: Animate value changes if the Bindable's control type supports it. Default is `true`.
     public func twoWayBind<B: Bindable>(with bindable: B,
                                         on dispatchQueue: DispatchQueue = .main,
                                         animateUpdates: Bool = true) {
