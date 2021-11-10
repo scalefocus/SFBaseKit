@@ -29,8 +29,10 @@
 		110A5A652399546500FA0912 /* CoordinatableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110A5A622399546500FA0912 /* CoordinatableViewModel.swift */; };
 		110A5A662399546500FA0912 /* Coordinator+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110A5A632399546500FA0912 /* Coordinator+Equatable.swift */; };
 		110A5A672399546500FA0912 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110A5A642399546500FA0912 /* Coordinator.swift */; };
+		4A8BD4CC24C5941D00EE41B1 /* Bundle+DecodeJSONFromFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8BD4CB24C5941D00EE41B1 /* Bundle+DecodeJSONFromFile.swift */; };
 		C75F8E3D241BA62F00B2A690 /* Array+RemoveFirstWhere.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75F8E3C241BA62F00B2A690 /* Array+RemoveFirstWhere.swift */; };
 		C77D470A247EB21C000A3A5C /* SimpleTabBarAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77D4709247EB21C000A3A5C /* SimpleTabBarAnimation.swift */; };
+		C9B7961C26553AE200762557 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B7961B26553AE200762557 /* Observable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,8 +60,10 @@
 		110A5A622399546500FA0912 /* CoordinatableViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoordinatableViewModel.swift; sourceTree = "<group>"; };
 		110A5A632399546500FA0912 /* Coordinator+Equatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Coordinator+Equatable.swift"; sourceTree = "<group>"; };
 		110A5A642399546500FA0912 /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		4A8BD4CB24C5941D00EE41B1 /* Bundle+DecodeJSONFromFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+DecodeJSONFromFile.swift"; sourceTree = "<group>"; };
 		C75F8E3C241BA62F00B2A690 /* Array+RemoveFirstWhere.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+RemoveFirstWhere.swift"; sourceTree = "<group>"; };
 		C77D4709247EB21C000A3A5C /* SimpleTabBarAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleTabBarAnimation.swift; sourceTree = "<group>"; };
+		C9B7961B26553AE200762557 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				110A5A3C2399543000FA0912 /* StoryboardInstantiatable.swift */,
+				C9B7961B26553AE200762557 /* Observable.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -121,6 +126,7 @@
 				110A5A4A2399545600FA0912 /* String+Base64.swift */,
 				110A5A4B2399545600FA0912 /* Array+UniqueAddRemove.swift */,
 				C75F8E3C241BA62F00B2A690 /* Array+RemoveFirstWhere.swift */,
+				4A8BD4CB24C5941D00EE41B1 /* Bundle+DecodeJSONFromFile.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -249,6 +255,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A8BD4CC24C5941D00EE41B1 /* Bundle+DecodeJSONFromFile.swift in Sources */,
 				110A5A512399545600FA0912 /* UIView+Gradient.swift in Sources */,
 				110A5A562399545600FA0912 /* String+Base64.swift in Sources */,
 				110A5A5E2399545D00FA0912 /* BaseDataSourceProtocol.swift in Sources */,
@@ -265,6 +272,7 @@
 				110A5A672399546500FA0912 /* Coordinator.swift in Sources */,
 				C75F8E3D241BA62F00B2A690 /* Array+RemoveFirstWhere.swift in Sources */,
 				110A5A532399545600FA0912 /* UIView+InspectableLayer.swift in Sources */,
+				C9B7961C26553AE200762557 /* Observable.swift in Sources */,
 				110A5A4E2399545600FA0912 /* UIColor+HexStringInit.swift in Sources */,
 				110A5A4C2399545600FA0912 /* Array+SafeAtSubscript.swift in Sources */,
 				110A5A502399545600FA0912 /* UIView+Animations.swift in Sources */,
@@ -329,7 +337,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -386,7 +394,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

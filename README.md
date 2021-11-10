@@ -11,6 +11,8 @@ Table of contents
 * [Requirements](#requirements)
 * [Installation](#installation)
 * [Usage example](#usage-example)
+  * [Coordinaotor](#coordinator)
+  * [Observable](#observable)
 
 ## Features
 - [x] **Coordinators** - setup your navigation using Coordinator Pattern.
@@ -109,6 +111,32 @@ class LoginCoordinator: Coordinator {
     
 To run the example project, clone the repo, and run ***pod install*** from the Example directory first.
 
+### Observable
+
+#### ViewModel
+Bindable property should be declared as Observable in ViewModel.
+```swift
+struct ExampleViewModel {
+    let name = Observable<String>("")
+}
+```
+
+#### ViewController 
+To bind an Observable with UIControls and vise versa - *sink* should be called in ViewController. 
+```swift
+@IBOutlet private weak var nameLabel: UILabel!
+
+override viewDidLoad() {
+    ...
+    setupBinding()
+}
+
+private func setupBinding() {
+    viewModel.name.sink { [weak self] name in
+        self?.nameLabel.text = name
+    }
+}
+```
 
 ## License
 
