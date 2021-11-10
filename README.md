@@ -118,13 +118,16 @@ Bindable property should be declared as Observable in ViewModel.
 ```swift
 struct ExampleViewModel {
     let name = Observable<String>("")
+    let email = Observable<String>("")
 }
 ```
 
 #### ViewController 
-To bind an Observable with UIControls and vise versa - *sink* should be called in ViewController. 
+To create an Observable binding - *sink* or *sinkAndFire* should be called in ViewController.
+To bind an Observable with UIControls - *oneWayBind* or *twoWayBind* should be called in ViewController. 
 ```swift
 @IBOutlet private weak var nameLabel: UILabel!
+@IBOutlet private weak var emailTextField: UITextField!
 
 override viewDidLoad() {
     ...
@@ -135,6 +138,8 @@ private func setupBinding() {
     viewModel.name.sink { [weak self] name in
         self?.nameLabel.text = name
     }
+    
+    viewModel.email.oneWayBind(with: emailTextField)
 }
 ```
 
