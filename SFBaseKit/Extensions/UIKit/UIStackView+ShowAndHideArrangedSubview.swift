@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension UIStackView {
+public extension UIStackView {
     
     /// Adds views to the arrangedSubviews and makes them visible.
     func addAndShowArrangedSubview(_ views: UIView...) {
